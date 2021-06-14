@@ -69,7 +69,7 @@ if (choice_man == "bowl"):
                     print(bcolors.RED+"Nope"+bcolors.END, "the number was",comp)
                     comp_score += comp
                 else:
-                    print(bcolors.GREENBG+"HOWSTAT!!! You got computers wicket!!!"+bcolors.END)
+                    print(bcolors.GREENBG+"HOWZATT!!! You got computers wicket!!!"+bcolors.END)
                     break
             print(bcolors.YELLOW+"Computer net score was"+bcolors.END,comp_score,bcolors.YELLOW+"points"+bcolors.END)
             print (" Get ready now..... Gotta rock batting too.....")
@@ -137,7 +137,7 @@ else:
                 else:
                     pass
                 if (comp == man):
-                    print (bcolors.GREENBG+"HOWSTAT!!! You got computers wicket!!!"+bcolors.END)
+                    print (bcolors.GREENBG+"HOWZATT!!! You got computers wicket!!!"+bcolors.END)
                     difference = man_score - comp_score
                     if (difference == 0):
                         difference == 1
