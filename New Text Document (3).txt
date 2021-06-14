@@ -1,5 +1,3 @@
-#To create a Number based cricket game 
-# First the rules should be defined
 import time
 class bcolors:
     HEADER = '\033[95m'
@@ -26,27 +24,28 @@ class bcolors:
     BLUEBG = '\033[104m'
     PINKBG = '\033[105m'
     CYANBG = '\033[106m'
-print ("Hi, Lets play number based cricket game\n")
+print ("Time to start HAND CRICKET\n")
 time.sleep(1)
-print ("Computer will guess a random number, if it is same as your guess then the batsman gets out\n")
+print ("Rules are simple! If you are batting make sure you dont end up typing same number as of computer! If you are bowling try guessing number chosen by computer\n")
 time.sleep(3)
 print ("The Number must be within 0 to 10"'\n')
 time.sleep(1)
-print ("if not out then score added to the player\n")
+print ("Score keeps adding up till you are out!!\n")
 time.sleep(1)
+print ("All the best now !!")
 import random
 choice_man =""
 i = 1
-print ("Now lets put toss\n")
+print ("Toss time\n")
 man_choice = input ("Heads or Tails\n")
 coin = ["heads" , "tails"]
 toss = random.choice (coin)
 if (man_choice == toss):
     print (bcolors.GREEN+"You won the toss"+bcolors.END)
-    choice_man = input("Choose to bat or bowl\n")
+    choice_man = input("Wanna be Dhoni or Bumrah..... I mean wanna bat or bowl.....\n")
     choice_man = choice_man.lower()
 else:
-    print (bcolors.RED+"Computer won the toss"+bcolors.END)
+    print (bcolors.RED+"Computer won the toss!!"+bcolors.END)
     bat_bowl = ["bat" , "bowl"]
     choice_comp = random.choice(bat_bowl)
     print ("And choose to ", bcolors.BLUE+choice_comp+bcolors.END)
@@ -60,20 +59,20 @@ if (choice_man == "bowl"):
             print("Now",bcolors.YELLOW+"Computer"+bcolors.END, "will Bat first")
             while True:
                 comp = random.randint(0,10)
-                man = int(input ("Enter your guess \n"))
+                man = int(input ("Enter your number \n"))
                 if man not in (0,1,2,3,4,5,6,7,8,9,10):
                     print("Invalid input")
                     continue
                 else:
                     pass
                 if  (comp != man):
-                    print(bcolors.RED+"No"+bcolors.END, "the number is",comp)
+                    print(bcolors.RED+"Nope"+bcolors.END, "the number was",comp)
                     comp_score += comp
                 else:
-                    print(bcolors.GREENBG+"Yes, you got the computer's wicket"+bcolors.END)
+                    print(bcolors.GREENBG+"HOWSTAT!!! You got computers wicket!!!"+bcolors.END)
                     break
-            print(bcolors.YELLOW+"Computer had scored"+bcolors.END,comp_score,bcolors.YELLOW+"points"+bcolors.END)
-            print (" Now your turn to bat")
+            print(bcolors.YELLOW+"Computer net score was"+bcolors.END,comp_score,bcolors.YELLOW+"points"+bcolors.END)
+            print (" Get ready now..... Gotta rock batting too.....")
             while (comp_score >= man_score):
                 comp = random.randint(0,10)
                 man = int (input ("Enter a number"))
@@ -83,15 +82,16 @@ if (choice_man == "bowl"):
                 else:
                     pass
                 if (comp == man):
-                    print (bcolors.REDBG+"Oh no! you are out"+bcolors.END)
+                    print (bcolors.REDBG+"NOOOOOOO!!!!! Computer got your wicket!!!!"+bcolors.END)
                     difference = comp_score - man_score
                     if (difference == 0):
                         difference == 1
-                    print (bcolors.REDBG+"Computer wins by a difference of"+bcolors.END,difference,bcolors.REDBG+"points"+bcolors.END)
-                    i = int (input ("If you want to play again enter 1 or else 2 \n"))
+                    print (bcolors.REDBG+"Computer won by a score of "+bcolors.END,difference,bcolors.REDBG+"points"+bcolors.END)
+                    i = int (input ("Press 1 to play again and press 2 quit......\n"))
                     if (i == 1):
                         continue
                     else:
+                        print("Bye Bye!!")
                         break
                 else:
                     man_score += man
@@ -100,10 +100,10 @@ if (choice_man == "bowl"):
                         difference = "no more"
                     if (difference == 0):
                         difference == 1
-                    print (bcolors.YELLOW+"Yes now your score is "+bcolors.END, man_score,bcolors.YELLOW+"and you need"+bcolors.END,difference,bcolors.GREEN+"points to win"+bcolors.END)
+                    print (bcolors.YELLOW+"Nice shot.... You need "+bcolors.END, man_score,bcolors.YELLOW+"and you need"+bcolors.END,difference,bcolors.GREEN+" more points to win"+bcolors.END)
             else:
-                print(bcolors.LIGHTGREEN+"Wow you are won"+bcolors.END)
-                i = int (input("if you want to play again enter 1 or else 2 \n"))
+                print(bcolors.LIGHTGREEN+"Lessssgooooo!!! You WON!!!"+bcolors.END)
+                i = int (input("Press 1 to play again and press 2 quit......\n"))
         else:
             break
 else:
@@ -111,7 +111,7 @@ else:
         if (i == 1):
             comp_score = 0
             man_score = 0
-            print("Now",bcolors.GREEN+"You"+bcolors.END,"will Bat first")
+            print("Now",bcolors.GREEN+"You"+bcolors.END,"are gonna bat")
             while True:
                 comp = random.randint(0,10)
                 man = int(input ("Enter a number \n"))
@@ -121,11 +121,11 @@ else:
                 else:
                     pass
                 if  (comp != man):
-                    print(" Yes")
+                    print(" Nice Shot....")
                     man_score += man
-                    print ("Now your score is,",man_score,"points")
+                    print ("Your current score is ",man_score,"points")
                 else:
-                    print(bcolors.RED+"No,Computer had got your wicket"+bcolors.END)
+                    print(bcolors.RED+"NOOOOOOO!!!!! Computer got your wicket!!!"+bcolors.END)
                     break
             print("You had scored",man_score)
             print (" Now Computer\'s turn to bat")
@@ -137,12 +137,12 @@ else:
                 else:
                     pass
                 if (comp == man):
-                    print (bcolors.GREENBG+"Yes, you got the computer\'s wicket"+bcolors.END)
+                    print (bcolors.GREENBG+"HOWSTAT!!! You got computers wicket!!!"+bcolors.END)
                     difference = man_score - comp_score
                     if (difference == 0):
                         difference == 1
                     print (bcolors.LIGHTGREYBG+"You won by a difference of"+bcolors.END,difference,bcolors.LIGHTGREYBG+"points"+bcolors.END)
-                    i = int (input ("If you want to paly again enter 1 or else 2 \n"))
+                    i = int (input ("Press 1 to play again and press 2 quit......\n"))
                     if (i == 1):
                         continue
                     else:
@@ -152,12 +152,12 @@ else:
                     difference = man_score - comp_score
                     if (difference == 0):
                         difference == 1
-                    print ("No the number is",comp)
-                    print (" Now computer\'s score is ", comp_score,"and it needs",difference,"points to win")
+                    print ("Nope the number was ",comp)
+                    print (" Computers score is ", comp_score,"and it needs",difference,"points to win..... Watchout dont let computer win.......")
             else:
-                print(bcolors.REDBG+"Oh no computer won"+bcolors.END)
+                print(bcolors.REDBG+"Good try!! Computer won the match...... Play again and make computer feel the wrath!!!!"+bcolors.END)
                 print(bcolors.LIGHTRED+"Computer had won by a difference of"+bcolors.END,difference,bcolors.LIGHTRED+"points"+bcolors.END)
-                i = int (input("if you want to play again enter 1 or else 2 \n"))
+                i = int (input("Press 1 to play again and press 2 quit......\n"))
         else:
             break
 
